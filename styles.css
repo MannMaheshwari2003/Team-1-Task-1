@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/NeutralFace.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./fonts/NeutralFace-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --black-theme-background-color: #101010;
+  --text-color: #e7e7e7;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  font-family: "CustomFont", sans-serif;
+}
+
+/* Navbar section */
+.navbar-custom {
+  position: relative;
+  z-index: 2; /* Ensure the navbar is above the background image */
+  border-color: var(--text-color);
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 25px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: transparent;
+  margin: 20px;
+  animation-name: navbar-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; /* Ensures the element stays in the end state of the animation */
+}
+
+@keyframes navbar-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+}
+
+.nav-link-custom {
+  color: white !important;
+  padding: 5px 20px;
+  border: 1px solid white;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: "CustomFont", sans-serif;
+}
+
+.contact {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.contact-btn {
+  padding: 2px 40px;
+  border-radius: 25px;
+  margin: 0;
+  font-family: "CustomFont", sans-serif;
+}
+
+.call-icon {
+  border-color: var(--text-color);
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px 10px;
+  border-radius: 50%;
+  align-content: center;
+}
+
+/* Body section */
+.body-container {
+  display: flex;
+  margin: 20px;
+  position: relative;
+  z-index: 1; /* Ensure the body container is above the background image */
+}
+
+.row {
+  display: flex;
+  height: 85vh;
+  z-index: 1;
+}
+
+.column1 {
+  flex: 1;
+  text-align: center;
+  animation-name: full-screen-img;
+  animation-duration: 2s;
+  animation-delay: 2.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes full-screen-img {
+  0% {
+    width: 400px;
+    height: 80vh;
+  }
+  100% {
+    width: 100vw;
+    height: 90vh;
+  }
+}
+
+.big-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.column2 {
+  flex: 1;
+  text-align: center;
+  animation-name: column-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; /* Ensures the element stays in the end state of the animation */
+}
+
+/* Right column card section */
+.card {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  max-width: 100%;
+  position: relative;
+  animation-name: backgroundChange;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; /* Ensure the animation's final state is retained */
+}
+
+/* Card animation */
+@keyframes backgroundChange {
+  0% {
+    background-color: var(--black-theme-background-color);
+    opacity: 0;
+  }
+  100% {
+    background-color: var(--text-color);
+    opacity: 1;
+  }
+}
+
+.card img {
+  border-radius: 15px;
+  max-width: 45%;
+  max-height: 120px;
+  font-style: "CustomFont", sans-serif;
+  animation: slide-in 1s ease-in forwards;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: start;
+  padding: 10px;
+  color: #333;
+  animation: slide-in 1s ease-in forwards;
+}
+
+.card .arrow {
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  bottom: 20px;
+  animation: slide-in 1s ease-in forwards;
+}
+
+.card .arrow.right {
+  right: 20px;
+  transform: rotate(45deg);
+  animation: slide-in 1s ease-in forwards;
+}
+
+.card .arrow.left {
+  left: 20px;
+  transform: rotate(-45deg);
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bottom text */
+.bottom-text {
+  background-color: var(--black-theme-background-color);
+  padding: 20px 20px;
+  border-radius: 25px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2; /* Ensure the bottom text is above the background image */
+  overflow: hidden;
+  animation-name: column-out;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; /* Ensures the element stays in the end state of the animation */
+}
+
+/* column2 and bottom-text slide animation */
+@keyframes column-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+}
+
+.big-text {
+  color: var(--text-color);
+  text-transform: capitalize;
+  font-size: 5rem;
+  font-family: "CustomFont", sans-serif;
+  animation: text-slide-in 1s ease-in 1s forwards;
+}
+
+/* Keyframes for text animation */
+@keyframes text-slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

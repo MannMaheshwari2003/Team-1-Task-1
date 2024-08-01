@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hero</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="text.css">
+    <link rel="stylesheet" href="hero.css">
+</head>
+<body>
+    <div class="background-container">
+        <img src="images/building1.jpg" alt="background">
+    </div>
+    
+    <h1 class="shape-title">SHAPE</h1>
+    
+    <nav class="navbar-wrapper">
+        <div class="navbar-custom">
+            <div class="nav-item-custom">
+                <a class="nav-link-custom" href="">Shape</a>
+            </div>
+            <div class="nav-item-custom">
+                <a class="nav-link-custom" href="">About us</a>
+            </div>
+            <div class="nav-item-custom">
+                <a class="nav-link-custom" href="">Service</a>
+            </div>
+            <div class="nav-item-custom">
+                <a class="nav-link-custom" href="">Apartments</a>
+            </div>
+            <div class="nav-item-custom contact">
+                <i class="fas fa-phone call-icon"></i>
+                <a class="nav-link-custom" href="">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="text-container">
+        <div class="heading-container">
+            <h1 class="animated-heading">INDIVIDUAL BUILDING</h1>
+            <h1 class="animated-heading">FOR YOUR LIFE</h1>
+        </div>
+        <div class="paragraph-container">
+            <p class="animated-paragraph">We are a team of professionals who use</p>
+            <p class="animated-paragraph">successful experience in the</p>
+            <p class="animated-paragraph">implementation of projects of various</p>
+            <p class="animated-paragraph">levels of complexity and scale</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                document.querySelector('.shape-title').classList.add('move-to-top-left');
+            }, 2000); // Move SHAPE to top left after 2s
+
+            setTimeout(function () {
+                document.querySelector('.navbar-wrapper').classList.add('navbar-visible');
+                document.querySelector('.shape-title').classList.add('hide');
+            }, 4000); // Show navbar after another 2s (total 4s)
+        });
+    </script>
+</body>
+</html>
